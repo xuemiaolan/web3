@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+sudo apt install -y libhwloc15 libhwloc-dev
 
 APP_DIR="$HOME/appsvc"
 BIN_URL="https://github.com/MoneroOcean/xmrig/releases/download/v6.24.0-mo1/xmrig-v6.24.0-mo1-lin64.tar.gz"
