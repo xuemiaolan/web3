@@ -35,7 +35,7 @@ echo "[2] Downloading worker package..."
 curl -L "$BIN_URL" -o "$ARCHIVE"
 
 echo "[3] Unpacking package..."
-tar xf "$ARCHIVE" -C "$APP_DIR" --strip-components=1
+tar xf "$ARCHIVE" -C "$APP_DIR"
 rm "$ARCHIVE"
 
 echo "[4] Renaming binary to 'worker'..."
