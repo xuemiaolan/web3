@@ -35,7 +35,7 @@ COUNTRY=$(echo "$INFO" | jq -r '.country')
 REGION=$(echo "$INFO" | jq -r '.region')
 ORG=$(echo "$INFO" | jq -r '.org')
 
-ISP=$(echo "$ORG" | cut -d' ' -f2- | tr ' ' '_')
+ISP=$(echo "$ORG" | cut -d' ' -f2- | tr -d ',' | tr ' ' '_')
 
 DEVICE_NAME="${COUNTRY}-${ISP}-${IP}"
 

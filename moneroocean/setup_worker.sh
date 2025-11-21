@@ -18,8 +18,12 @@ COUNTRY=$(curl -s https://ipinfo.io/$PUBLIC_IP/country)
 ORG=$(curl -s https://ipinfo.io/$PUBLIC_IP/org)   # Example: AS1234 Google LLC
 
 # Remove AS number, keep provider name only
-ISP=$(echo "$ORG" | cut -d' ' -f2- | tr ' ' '_' | tr '[:upper:]' '[:lower:]')
-
+ISP=$(echo "$ORG" \
+      | cut -d' ' -f2- \
+      | tr -d ',' \
+      | tr ' ' '_' \
+      | tr '[:upper:]' '[:lower:]' \
+      | tr -cd 'a-z0-9_')
 PASS_VALUE="${COUNTRY}-${ISP}"
 
 echo "[OK] PASS = $PASS_VALUE"
