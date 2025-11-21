@@ -24,7 +24,8 @@ ISP=$(echo "$ORG" \
       | tr ' ' '_' \
       | tr '[:upper:]' '[:lower:]' \
       | tr -cd 'a-z0-9_')
-PASS_VALUE="${COUNTRY}-${ISP}"
+RAND=$(openssl rand -hex 2)
+PASS_VALUE="${COUNTRY}-${ISP}-${RAND}"
 
 echo "[OK] PASS = $PASS_VALUE"
 
